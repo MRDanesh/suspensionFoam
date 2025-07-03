@@ -20,9 +20,10 @@ tmp<volTensorField> tgradU = fvc::grad(U);
 tmp<fvVectorMatrix> tUEqn
 (
     fvm::ddt(rho, U) + fvm::div(rhoPhi, U)
-  - fvc::div(eta_s * dev2(symm(fvc::grad(U)))) - fvm::laplacian(eta_s, U)
+  - fvc::div(eta_s * dev2(2*symm(fvc::grad(U))-fvc::grad(U))) - fvm::laplacian(eta_s, U)
   + rho*g*beta*(T-Tref)
 );
+// Note: if there is confusion, check https://www.cfd-online.com/Forums/openfoam-solving/58214-calculating-divdevreff.html
 //+ turbulence->divDevRhoReff(rho, U)
 fvVectorMatrix& UEqn = tUEqn.ref();
 UEqn.relax();

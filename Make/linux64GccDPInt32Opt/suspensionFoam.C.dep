@@ -1,5 +1,5 @@
-$(OBJECTS_DIR)/naturalDensityPimpleFoam.C.dep: \
-naturalDensityPimpleFoam.C \
+$(OBJECTS_DIR)/suspensionFoam.C.dep: \
+suspensionFoam.C \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvCFD.H \
 $(WM_PROJECT_DIR)/src/dynamicFvMesh/lnInclude/dynamicFvMesh.H \
 $(WM_PROJECT_DIR)/src/transportModels/incompressible/singlePhaseTransportModel/singlePhaseTransportModel.H \
